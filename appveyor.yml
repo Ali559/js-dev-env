@@ -1,5 +1,5 @@
 environment:
-natrix: 
+matrix: 
 - nodejs_version "13"
 
 
