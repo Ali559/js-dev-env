@@ -23,6 +23,14 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.get('/', (req, res) => {
     res.sendFile(join(__dirname, '../src/index.html'))
+});
+
+app.get('/users', (req, res) => {
+    res.json([
+        { "id": 1, "firstName": "Bob", "lastName": "Barker", "email": "bobbarker61@gmail.com" },
+        { "id": 2, "firstName": "Johnny", "lastName": "Sins", "email": "johnysins32@gmail.com" },
+        { "id": 3, "firstName": "jane", "lastName": "Austin", "email": "janeaustin22@gmail.com" }
+    ]);
 })
 
 
