@@ -25,7 +25,7 @@ getUsers().then(result => {
 
             deleteUser(element.id) //eslint-disable-line no-console
             const row = element.parentNode.parentNode;
-            row.parentNode.removeChild(row);
+            row.remove();
         }
     })
 

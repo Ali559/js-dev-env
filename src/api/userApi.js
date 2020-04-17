@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import "whatwg-fetch";
 
 import getBaseUrl from './baseUrl';
@@ -6,6 +5,7 @@ import getBaseUrl from './baseUrl';
 const baseurl = getBaseUrl();
 
 export function getUsers() {
+    console.log(baseurl) //eslint-disable-line no-console
     return get('users');
 }
 
@@ -14,7 +14,9 @@ export function deleteUser(id) {
 }
 
 function get(url) {
+
     return fetch(baseurl + '/' + url).then(onSuccess, onError);
+
 }
 
 function del(url) {
