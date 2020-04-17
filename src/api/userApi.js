@@ -18,7 +18,7 @@ function get(url) {
 }
 
 function del(url) {
-    const request = new Request(baseurl + '/' + url, {
+    const request = new Request(`${baseurl}/${url}`, {
         method: 'DELETE'
     });
     return fetch(request).then(onSuccess, onError)
