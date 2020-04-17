@@ -1,5 +1,5 @@
 export default function getBaseUrl() {
-    return getQueryStringParameterByName('useMockApi') ? 'http://localhost:5000' : '/';
+    return getQueryStringParameterByName('useMockApi') ? 'http://localhost:5000/' : 'https://pacific-cove-59572.herokuapp.com/';
 }
 
 

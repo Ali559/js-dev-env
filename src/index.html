@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Title</title>
+
+    <% if(htmlWebpackPlugin.options.trackJSToken){ %>
+        <script>
+            window.TrackJS && TrackJS.install({
+                    trackJsToken: '<%=htmlWebpackPlugin.options.trackJSToken%>'
+                }) // for more configuration options, see https://docs.trackjs.com });
+        </script>
+
+        <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
+        <% } %>
+
+
 </head>
 
 <body>
@@ -20,6 +33,7 @@
         </thead>
         <tbody id="users"></tbody>
     </table>
+
 </body>
 
 </html>
