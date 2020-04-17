@@ -1,11 +1,28 @@
+/* eslint-disable no-unused-vars */
 import "whatwg-fetch";
+
+import getBaseUrl from './baseUrl';
+
+const baseurl = getBaseUrl();
 
 export function getUsers() {
     return get('users');
 }
 
+export function deleteUser(id) {
+    return del(`users/${id}`)
+}
+
 function get(url) {
-    return fetch(url).then(onSuccess, onError);
+    return fetch(baseurl + '/' + url).then(onSuccess, onError);
+}
+
+function del(url) {
+    const request = new Request(baseurl + '/' + url, {
+        method: 'DELETE'
+    });
+    return fetch(request).then(onSuccess, onError)
+
 }
 
 function onSuccess(response) {
